@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/url.css' %}">
+</head>
+<body>
+    <div class="cont1">
+        <h1>Welcome {{user.username}} </h1>
+        <h2>Paste Your Long URL here</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+           <label for="">Enter original URL:</label>
+           <input type="url" name="original_url" id="" required>
+           <div></div>
+           <center><button type="submit">Short URL</button></center>
+        </form>
+     <h3>Your Short URLs</h3>
+     {% if urls  %}
+        <ul>
+            {% for url in urls  %}
+               <li>
+                Original: <a href="{{ url.original_url }}" target="_blank">{{ url.original_url }}</a> |
+                    Shortened: <a href="{{ url.get_short_url }}" target="_blank">{{ url.get_short_url }}</a>
+               </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No URLs shortened yet.</p>
+     {% endif %}
+    </div>
+</body>
+</html>

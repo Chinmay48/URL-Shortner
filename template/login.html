@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+    <div class="form">
+        <h2>Welcome to <span>Tiny URL</span>
+            Login into Your Account</h2>
+    
+        <form action="{% url 'login' %}" id="loginForm" method="POST">
+            {% csrf_token %}
+            <label for="">Username</label>
+            <input type="text" name="username" placeholder="Your username" required>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password" placeholder="" required>
+            
+            <p class="error" id="errorMessage">{{error}}</p>
+            <a href="/signup">Not have an Account? Create New!</a>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    gap:30px;
+    position: relative;
+    top:-69px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo img{
+    height: 200px;
+    width:250px;
+}
+.link{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    height: 20px;
+    background-color: rgb(42, 41, 41);
+    color: white;
+    width: 50px;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(225,16,16,1) 0%, rgba(227,128,7,1) 47%);
+    height: 50vh;
+    color: white;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    width: 0;
+    font-size: 40px;
+    font-weight: bold;
+    animation: typewriter 3s steps(40, end) forwards, blinkCursor 0.7s infinite;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    color: yellow;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 3.5s;  /* Delays appearance after typewriter effect */
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 4.5s;  /* Further delay for next text */
+}

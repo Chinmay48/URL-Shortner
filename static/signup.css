@@ -1,0 +1,50 @@
+body{
+    background: linear-gradient(90deg, rgba(225,16,16,1) 0%, rgba(227,128,7,1) 47%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 35vw;
+    background-color: white;
+    position: relative;
+    left: 500px;
+    top:220px;
+    border-radius: 10px;
+}
+input{
+    width: 100%;
+    padding: 4px;
+    color: rgb(49, 48, 48);
+    border-radius: 3px;
+    outline: none;
+    
+}
+button{
+    width: 100%;
+    background-color: rgb(33, 31, 31);
+    color: white;
+    font-weight: bolder;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+
+}
+span{
+    color:red;
+}
+.error{
+    color: red;
+    font-weight: bold;
+}
